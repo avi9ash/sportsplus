@@ -13,7 +13,7 @@ import com.cse.sportsplus.models.Athelete;
 import com.cse.sportsplus.repository.AtheleteRepository;
 
 @RestController
-@RequestMapping("/Athelete")
+@RequestMapping("/athelete")
 public class AtheleteController {
 	
 	@Autowired
@@ -37,6 +37,7 @@ public class AtheleteController {
 	@PostMapping("/deleteAthelete")
 	public Athelete atheleteDelete(@RequestBody Athelete athelete)
 	{
+		arepo.deleteById(athelete.getId());
 		
 		
 		return athelete;

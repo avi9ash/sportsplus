@@ -5,27 +5,55 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="tbl_athelete")
 public class Athelete implements Serializable{
+	@Id
+	@GeneratedValue
+	@Column(name="athelete_id")
     private long id;
+	@Column(name="first_name")
     private String firstName;
+	@Column(name="last_name")
     private String lastName;
+	@Column(name="dob")
     private String  dob;
+	@Column(name="age")
     private long age;
+	@Column(name="gender")
     private char gender;
+	@Column(name="contact_no")
     private long contactNo;
+	@Column(name="address")
     private String address;
+	@Column(name="parent_name")
     private String parentFullName;
+	@Column(name="parent_address")
     private String parentAddress;
+	@Column(name="parent_contact")
     private long parentContact;
     //primary sports check for implementation...
+	@Column(name="training_base")
     private String trainingBase;
+	@Column(name="college")
     private String college;
+	@Column(name="group_id")
     private ArrayList<Integer> groupId;
+	@Column(name="coach_id")
     private long coachId;
+	@Column(name="level")
     private String level;
+	@Column(name="resident_status")
     private String residentStatus;
+	@Column(name="athelete_status")
     private ArrayList<String> athleteStatus;
+	@Column(name="blood_group")
     private String bloodGroup;
 
     public Athelete(long id, String firstName, String lastName, String dob, long age, char gender, long contactNo, String address, String parentFullName, String parentAddress, long parentContact, String trainingBase, String college, ArrayList<Integer> groupId,
